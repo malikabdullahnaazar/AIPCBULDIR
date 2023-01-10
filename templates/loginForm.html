@@ -51,18 +51,22 @@
             <div class="form-box2">
               <h3 id="title">Login</h3>
               <form class="signupFrom" action="" method="POST">
-                {% csrf_token %} csrf_exempt
+                {% csrf_token %}
                 <div class="input-group">
                   <div class="input-field">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Name" name"username"
-                    id="nameField" />
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      id="nameField"
+                      name="username"
+                    />
                   </div>
 
                   <!---<div class="input-field">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" placeholder="Email">
-            </div>-->
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" placeholder="Email">
+                  </div>-->
 
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>

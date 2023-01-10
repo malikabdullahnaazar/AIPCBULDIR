@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
-from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -23,16 +22,22 @@ def Signuppage(request):
     return render(request, 'signupfrom.html')
 
 
-@csrf_exempt
 def SignIn(request):
     if request.method == "POST":
-        uname = request.POST.get('username')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=uname, password=password)
-        if user is None:
-            return HttpResponse("username or password is incorrect..")
+        print(username)
+        print(password)
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
         else:
-            login(user=user, request=request)
-            return render(request, 'index.html')
+            return HttpResponse("username or password is incorrect..")
 
-    return redirect('signin')
+    return render(request, 'loginForm.html')
+
+
+def homepage(request):
+
+    return render(request, 'index.html')
