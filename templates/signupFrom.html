@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="project.css" />
+    <link rel="stylesheet" type="text/css" href="css/lightbox.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/67181eda1e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let signupBtn = document.getElementById("signupBtn");
+      let signinBtn = document.getElementById("signinBtn");
+      let nameField = document.getElementById("nameField");
+      let title = document.getElementById("title");
+
+      signinBtn.onClick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTMT = "Sign In";
+        signupBtn.classList.add("disabled");
+        signinBtn.classList.remove("disabled");
+      };
+    </script>
+
+    <title>Ai PC Builder</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5 col-sm-12 bannertext pt-4 lform">
+            <div class="form-box">
+              <h3 id="title">Sign Up</h3>
+              <form class="signupFrom" action="" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                  <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      id="nameField"
+                      name="username"
+                    />
+                  </div>
+
+                  <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email" />
+                  </div>
+
+                  <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                    />
+                  </div>
+
+                  <p>Have account? <a href="#" class="clickhere">Login</a></p>
+                </div>
+
+                <div class="btn-field">
+                  <button type="submit" id="signupBtn">Sign Up</button>
+                  <button type="button" class="disabled" id="signinBtn">
+                    Log in
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12 loginimage">
+            <img src="login.png" />
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
